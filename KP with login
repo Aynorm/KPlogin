@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://blogger.googleusercontent.com/img/a/AVvXsEjXxqfLKZAFCCodmfoC4K8jbTmRg5Fs4E5wLdY_gMpvcAuAzUin6WwIW0nGdGGkzLnemPu8smdCT32VZdwXkI9Mrm1IyVF31LLtGVjA3899O8BjVfLdMSx_HvwDOuX-1LS1vEaZqz673QkR_9ftSWPVkbL-SPnr9r1H0MGC-tMH5tfX7UBTdN8UftXp"
+    />
+    <title>KWARAPOLYEXPO</title>
+    <link rel="stylesheet" href="kp.css" />
+    <style>
+      .header {
+        display: flex;
+        margin: 0%;
+        background-color: green;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        gap: 5px;
+        align-items: center;
+      }
+      .kp {
+        margin: 0%;
+        font-size: larger;
+        color: white;
+      }
+      .first-input {
+        border: none;
+        border-radius: 5px 0px 0px 5px;
+        width: 100%;
+        height: 35px;
+        margin: 0%;
+      }
+      .search-icon {
+        width: 20px;
+        height: 20px;
+        background-color: yellow;
+        padding: 8.5px;
+        border-radius: 0px 5px 5px 0px;
+        margin-left: -5px;
+      }
+      .register-button,
+      .login-button {
+        border: none;
+        border-radius: 5px;
+        width: 100px;
+        height: 35px;
+        background-color: white;
+        color: black;
+        cursor: pointer;
+      }
+      .login-button {
+        margin-right: 10px;
+      }
+
+      /* Full-width input fields */
+      .user-input[type="text"],
+      .user-input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      /* Set a style for user button */
+      .user-button {
+        background-color: #04aa6d;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+      .user-input:hover {
+        opacity: 0.8;
+      }
+
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+      }
+
+      /* Center the image and position the close button */
+      .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+      }
+      .avatar {
+        width: 40%;
+        border-radius: 50%;
+      }
+
+      .container {
+        padding: 16px;
+      }
+
+      .forget-psw {
+        float: right;
+        padding-top: 16px;
+      }
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* width height */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable Scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgb(0, 0, 0, 0.4); /* Black w/ opacity */
+        padding-top: 60px;
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centerd */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on the screen size */
+      }
+
+      /* The close button (x) */
+      .close {
+        position: absolute;
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: red;
+        cursor: pointer;
+      }
+      /* Add Zoom Animation */
+      .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s;
+      }
+
+      @-webkit-keyframes animatezoom {
+        from {
+          -webkit-transform: scale(0);
+        }
+        to {
+          -webkit-transform: scale(1);
+        }
+      }
+
+      @keyframes animatezoom {
+        from {
+          transform: scale(0);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+        .forget-psw {
+          display: block;
+          float: none;
+        }
+        .cancelbtn {
+          width: 100%;
+        }
+      }
+
+      .second-head {
+        background-color: rgb(0, 0, 0);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding: 10px;
+      }
+
+      .body-updates {
+        display: flex;
+        gap: 100px;
+        margin: 0;
+      }
+      .dropbtn {
+        width: 100%;
+        height: 35px;
+        background-color: transparent;
+        color: white;
+        border-radius: 0px;
+      }
+      .dropbtn:hover {
+        background-color: green;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgb(45, 194, 45);
+      }
+      .dropdown-content a {
+        display: block;
+        padding: 12px 32.5px;
+        color: white;
+        width: 90px;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown:hover .dropbtn {
+        background-color: green;
+      }
+      .news-update {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1f 1fr;
+        gap: 20px;
+        margin-top: -12px;
+        background-color: rgb(233, 244, 240);
+      }
+
+      .admission {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+        padding: 0px;
+        border-radius: 5px;
+      }
+
+      .portal {
+        background-color: green;
+        border: 0ch;
+        border-radius: 5px;
+        margin-top: 10px;
+        height: 35px;
+        border: 0ch;
+      }
+      .portal:hover {
+        background-color: black;
+        color: wheat;
+        cursor: pointer;
+      }
+      .all-project {
+        display: flex;
+        overflow: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        gap: 10px;
+        color: white;
+      }
+      .project {
+        background-color: green;
+      }
+      .project:hover {
+        background-color: wheat;
+        color: green;
+      }
+      .cbt-image {
+        width: 250px;
+        height: 130px;
+        padding: 10px;
+      }
+      .h2-all-cbt {
+        text-align: center;
+        margin-top: -10px;
+      }
+      .courses {
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        overflow: auto;
+      }
+      .general-courses {
+        width: 100%;
+        height: 230px;
+        background-color: white;
+        text-align: center;
+        overflow: aut;
+        font-size: 25px;
+        padding: 10px;
+      }
+      .general-courses:hover {
+        background-color: wheat;
+        color: black;
+      }
+
+      .the-book-div {
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        overflow: scroll;
+        overflow-y: hidden;
+      }
+      .the-book {
+        width: 150px;
+        height: 200px;
+        margin: 0%;
+        background-color: white;
+        padding: 10px;
+      }
+      .public-administration-hnd,
+      .public-administration-nd {
+        background-color: none;
+        padding: 20px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        overflow: scroll;
+        overflow-y: hidden;
+      }
+
+      .all-footer {
+        background-color: rgb(38, 174, 38);
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 10px;
+        margin: 0%;
+        padding: 0%;
+        padding-bottom: 5px;
+        opacity: 80%;
+      }
+      p {
+        margin: 1px;
+      }
+
+      .footer-h3 {
+        margin-bottom: 5px;
+        color: rgb(218, 212, 212);
+      }
+      .footer-paragraph {
+        color: white;
+      }
+      .first-span {
+        color: rgb(218, 212, 212);
+        cursor: pointer;
+      }
+      .first-span:hover {
+        background-color: rgb(38, 174, 38);
+        color: black;
+      }
+      .footer-icon {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      /* width */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 2px;
+      }
+      /* Track */
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: #555;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Get the modal
+      var modal = document.getElementById("log");
+
+      //When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    <div class="header">
+      <h2 class="kp"><a href="#">KPEXPO</a></h2>
+      <input class="first-input" type="text" placeholder="Search" />
+      <img
+        class="search-icon"
+        src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/search-512.png"
+        alt="sear"
+      />
+      <button
+        onclick="document.getElementById('log').style.display='block'"
+        style="width: auto"
+        class="login-button"
+      >
+        Login
+      </button>
+      <div id="log" class="modal">
+        <form
+          class="modal-content animate"
+          action="/action_page.php"
+          method="post"
+        >
+          <div class="imgcontainer">
+            <span
+              onclick="document.getElementById('log').style.display='none'"
+              class="close"
+              title="Close Modal"
+              >&times;</span
+            >
+            <img
+              src="https://sm.ign.com/ign_ap/cover/a/avatar-gen/avatar-generations_hugw.jpg"
+              width="200"
+              alt="avatar"
+              class="avatar"
+            />
+          </div>
+
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input
+              class="user-input"
+              type="text"
+              placeholder="Enter Username"
+              name="uname"
+              required
+            />
+
+            <label for="psw"><b>Password</b></label>
+            <input
+              class="user-input"
+              type="password"
+              placeholder="Password"
+              name="psw"
+              required
+            />
+
+            <button class="user-button" type="submit">Login</button>
+
+            <label>
+              <input type="checkbox" checked="checked" /> Remember me
+            </label>
+          </div>
+
+          <div class="container" style="background-color: lightgreen">
+            <button
+              class="user-button cancelbtn"
+              type="button"
+              onclick="document.getElementById('log').style.display='none'"
+            >
+              Cancel
+            </button>
+            <span class="forget-psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </div>
+
+      <button class="register-button">Register</button>
+    </div>
+
+    <div class="second-head">
+      <button class="dropbtn">Home</button>
+      <div class="dropdown">
+        <button class="dropbtn">National Diploma</button>
+        <div class="dropdown-content">
+          <a href="#">I.T</a>
+          <a href="#">I.E.S</a>
+          <a href="#">I.A.S</a>
+          <a href="#">I.F.M.S</a>
+          <a href="#">I.I.C.T</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Higher National Diploma</button>
+        <div class="dropdown-content">
+          <a href="#">I.T</a>
+          <a href="#">I.E.S</a>
+          <a href="#">I.A.S</a>
+          <a href="#">I.F.M.S</a>
+          <a href="#">I.I.C.T</a>
+        </div>
+      </div>
+      <button class="dropbtn">Updates</button>
+      <button class="dropbtn">News</button>
+      <button class="dropbtn">Whatsapp Groups</button>
+
+      <button class="dropbtn">Other Schools</button>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr">
+      <div>
+        <h3>News Updates</h3>
+      </div>
+      <div>
+        <button class="portal">
+          <a
+            style="color: white"
+            href="https://portal.kwarastatepolytechnic.edu.ng/"
+            >Portal</a
+          >
+        </button>
+        <button class="portal">
+          <a
+            style="color: white"
+            href="https://transcript.kwarastatepolytechnic.edu.ng/"
+            >e-Transcript</a
+          >
+        </button>
+      </div>
+    </div>
+
+    <div class="news-update">
+      <div class="admission">
+        <p>
+          <a
+            style="color: black"
+            href="https://kwarastatepolytechnic.edu.ng/index.php/admissions"
+            >Admission</a
+          >
+        </p>
+        <p><a style="color: black" href="#">School Calender</a></p>
+        <p>
+          <a
+            style="color: black"
+            href="https://kwarastatepolytechnic.edu.ng/index.php/component/content/article/28-slider/151-advertisement-for-2022-2023-admissions?Itemid=103"
+            >Advertisement For 2022/2023 Admission</a
+          >
+        </p>
+        <p>
+          <a
+            style="color: black"
+            href="https://kwarastatepolytechnic.edu.ng/index.php/component/content/article/15-home/150-approved-calendar-for-hnd-i-mass-communication-for-the-2021-2022-academic-session?Itemid=103"
+            >Approved Calender For HND I Mass Communication For the 2022/2023
+            Academic Session</a
+          >
+        </p>
+        <p>
+          <a
+            style="color: black"
+            href="https://kwarastatepolytechnic.edu.ng/index.php/component/content/article/30-notice/154-list-of-qualified-aspirants-for-the-2021-2022-institutes-and-departments-election?Itemid=103"
+            >List of qualified aspirants for the 2022/2023 institutes and
+            departments election</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="all-project">
+      <div class="project">
+        <img
+          class="cbt-image"
+          src="https://blogger.googleusercontent.com/img/a/AVvXsEhR9izo7yCeUJhfn3lrVD0FxpbmL4jT81EnplM5YPIOh0FE5_we-Dy80k8mLMajqPH7n99cz6V4N3NsQHKfdwMVhZn2VeCirRYgpQkuH4VVJl7yPWeyYu1EdY23coxcmcGlrvWRBS2wow6IYdlI0TPkTCF99j8q9HzYOsWT2rReuY-_y6Ou7Rp1rQ2f"
+          width="300px"
+          alt="project"
+        />
+        <h2 class="h2-all-cbt">PROJECT</h2>
+      </div>
+      <div class="project">
+        <img
+          class="cbt-image"
+          src="https://blogger.googleusercontent.com/img/a/AVvXsEiOO-OlrN-780lpGVoBO3AEBYp07Bhg8ErEZx0ovZwqQiSgtU620gWCf5yDunBD3f2i7o-6z5lw8n6YrZGWO0XaH0m9HFHARJsfglNiMix3Zbaut13OPBrINBKd3GE_Xr9r3FASpUmMz-UQz6SF8CIdRo8b4XZHntbcF_-cm58nxjzg97HMXXkGZrD-=w400-h304"
+          width="300px"
+          alt="seminar"
+        />
+        <h2 class="h2-all-cbt">SEMINAR</h2>
+      </div>
+      <div class="project">
+        <img
+          class="cbt-image"
+          src="https://blogger.googleusercontent.com/img/a/AVvXsEjmiJdHnZ8plEkeFsSYFgP0I4vwm6utGbyK5lM8O2juM163Ug76MLw3AgAgPDVBSaKSpQUGVAOq4LGq2StJOrkTS_LVs6cxNq7b_VfF6G2KMz1APU7-SJJUJmVQem3f_NOOuaDx2SutxPK4IczjF25LkzOB15Wpo8UAPmF7bZKv-H287zgBF52HCnO0"
+          width="300px"
+          alt="past questions"
+        />
+        <h2 class="h2-all-cbt">PAST QUESTIONS</h2>
+      </div>
+      <div class="project">
+        <img
+          class="cbt-image"
+          src="https://blogger.googleusercontent.com/img/a/AVvXsEiywNIBvNbYz4rGPCOsN5DGyI1-hnKxz16jhiypWjquWbuLLDSMfEaQh8lBFwcJ4H4nrGs4czzk9AdbGlBuGM_-e6nDv2qlE9BUef79Z7BVghXBdIBrpfkyh_Eu2omI9I769vysiCmWLVHzGyDJ2QF9DU_76AJLhqshBjNaTnTgnxP4a4PigoMnsgvU"
+          width="300px"
+          alt="cbt"
+        />
+        <h2 class="h2-all-cbt">CBT</h2>
+      </div>
+    </div>
+
+    <h2 style="margin: 0%">COURSES</h2>
+    <div class="courses" style="background-color: green; padding: 20px">
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPp1iUOLfx0ll2bRwilWI0pHzpIO4tUicHqpqm8-rSpdwJQSgPl8aaI3RiIlJXwKT8ygQ3p9H0xu3RQnbW0wXMRK-xVDzltgVyIxoHyjsvexCXwe61BdEtMnynzkjgE88rl19z0HwfrswlqAhnCAEP7AbjVpeBqcyBSgFuv0kgxcysGDgNCrdB-RHI/s320/accountancy.jpg"
+            alt="accountacy"
+            width="230" /></a
+        >ACCOUNTANCY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2OwMBx0DzgejnE1Jq0ZhLgI_04IEQKNVo-K4JcCc1vGwhP_ej6lAAULJezXm7VwwCLkhSSJdNU7BqjBan3dZw6Yh4FokBJkMqTvg3xfRsNnaqugP8YCYKRqlViQ_qN4zBdc__at9T-MiZVpL1jBKnAD03OLO1LwRi6Vn7WXsC_CYPhd9ShW6NzjPK/s320/marketing.jpg"
+            alt="marketing"
+            width="230"
+            height="150" /></a
+        >MARKETING
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh5jxg2LZAUnESQoj-RGfIuaFCCcF38wNQqSBrxqNNBhdF4dOnIsvLBgTLfokq65b16yP1AC7OeC4WP8bX1dX5FH_gGnsbDU3fWEcHbTFa8zhLo-V3t3m1qHghLZjPn7SflinIilzUJ-RRSkUUmPtk3dHGAk0aQLur9tXm512szRbpOCxdfqzDjdzue/s320/statistics.png"
+            alt="statistics"
+            width="230"
+            height="150" /></a
+        >STATISTICS
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2aitcbL8wtL4Qdf7VqdtGAEYnyfvrbDZizAGjMyaCQXRc0kAjpdvgBL18z80pPdDy7KRNqIEkWWDDEY2TR90baLmuzguJFqJ9K7b_w1JS_8qWU3ljGt7eXOEvz7wNxmP8EX4i6m_8R6NYF51xG6BB-azsTdtpwsiFzj-xzUoFKOXOG2Wpu9-qjYgL/s320/mass%20comm.jpg"
+            alt="mass comm"
+            width="230"
+            height="130" /></a
+        >MASS COMMUNICATION
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiO74IehJhtLZ5QvlEfCLPeFafAgJnbsZKCoOxNNir-Fbx0PwQGhf8kZU0_1UB3v83P3QGtglws-T-jmspFziLCnOKo5itrS4dROrOkjc9IHYdmooFRbvGiPC9uph7ri8t4lSxcJGN1Nn0Wr-FqBmZjrJQDG42Jilhqaz1vbWSoPqoC1Mh6TQ6MO3hV/s320/banking.jpg"
+            alt="banking"
+            width="230"
+            height="130" /></a
+        >BANKING AND FINANCE
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7bl8qjKFf6zmtszyiPuenRaT83TD2P5l817YEUJ4Cmk7HtgbWiQWZ90zmI7A8HEhddJrKi6uqk-YR275xR8rxv40uwm-bMyBcCn9qlL94vxgtH366N_n1UOuKn-fOCV7usvPQgP2Jh3AbFo1E90I-Ozy2YX56MA1nEiQntJchHHddmwhehHoFXbVw/s320/building.jpg"
+            alt="building"
+            width="230"
+            height="130" /></a
+        >BUILDING TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjiGU08qL_DNOtV7RIknbbbO1aA1-Uwr3tZVCOW-OqyM0de7a2vg3W-bOICGDJ40_Ceuw2yLytFyCTBnl-HYiclAWQyJA3NRcTpMYv4r_Ax0SO4HIFFJ6HWPrZtEyIaijWvDkSB8Wsz2YylfDtmVHRnU4sGKF0kTld3vGPC0Bvc_6cFLEnKBPxXCGaM/s320/quantity%20survay.jpg"
+            alt="quantity survey"
+            width="230"
+            height="130" /></a
+        >QUANTITY SURVEYING
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiROjInZZ1KuDfejH9EJWsGf31TNclUlqGOSrde6oX15ggL1yrJpT7KBptAAt2I1ci7HnJLZvNGOM_v_3oj05yxIBuRBVNBmNz2iWaJJ02IuAiOuE1YmQXW7qowtqC3UX8Vn2Yf4hfbXpI4qghWuw95B0IOSq2je7ja_71AdJfDolmEBcQMcv_4_xk_"
+            alt="pub admin"
+            width="230"
+            height="130"
+        /></a>
+        PUBLIC ADMINISTRATION
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi58LILT83neBAaDMte9xdYYBrYaL5Hne9YlOBELTca8LrsjE612s7QRNSnd53yMWgKQPETRmtcFoMrwSGlcJGlsSGeh3H9TZQa-7LZWrmgQ5GrfLUYaHx4zohh8lYxGjrF29D7jXgc6roMq9sPmnklCUP-CziQxbhQ20PBjiyF2H5RkTSjXFoaULMt/s320/computer.jpg"
+            alt="computer science"
+            width="230"
+            height="130"
+        /></a>
+        COMPUTER SCIENCE
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSCIJhbxA1gar1anIxb3s3vuv5oGKJsv7IQAHxsz7XwBZkJhAUO-WxSOpCsDCR60a3ZjYE0s5cAMdQU_4_QcsxMAspi1RcUtfrLai8FFFyqPG58Y1HOvq2rxH9nY96ZhpOTfRDyGu3GtkcfraP1uQrhE5VPNGE57JPtoM1cwqygq7c9oWmK6-DEzli/s320/Agricultural-Technology-in-Africa-1.jpg"
+            alt="agric techology"
+            width="230"
+            height="130" /></a
+        >AGRICULTURAL TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhnSL0iE93vSnEIDPAgKqzwwnGT5XgJBGZFDdYXIshl69EWyFyzvkmTfks7Kuxgyk3ZntmKUmJphC-fDm73-Oqpn9CCROLtKmRfm3qGjcCsUNld8DFE541_GgrQkwhjvtcLjpQtHsZqvA3_oWdd-2fDnAp_OmxYiv--1FIamEh6DYLt8wLgYgXuhBvm/s320/Digital-Agriculture.jpg"
+            alt="agric enginnering"
+            width="230"
+            height="130" /></a
+        >AGRICULTURAL ENGINEERING/TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEji-CezcdHnUr-Hr-DYc4mkikC4mZrmcMXKBOPFr87P6dqw5IUmKYEjxTXkjVk6RlYUXRiWna3-xjEstuhvSi2PEJKBY_jf1cgq3rCzq-XZE2-hGkplW574R1xdq7GTWtxYD163EfHXZGrXqW4QLJX3ShAsskSZQhKGjLW_LqiFMnfBq68Pk_bR3Cga/s320/architecture-degrees.jpg"
+            alt="architectural"
+            width="230"
+            height="130" /></a
+        >ARCHITECTURAL TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhJ8k9ef9Jt2MZsSgOT5IeBzMB9g5LFdhN-wU7ncARQeLHs-QEAEePI611iDkBkUGwpn3SkIWNFLmPfwLWkRKKpJRsJc7CRZKyj04QnCcNdKNZeEvCCMOPHipniezIT17sIqSpHJWydvsubI5S5CDg0q7yrmtUKv3ch4gN3dTGlsPJr6e7avjPn21Hy=w320-h136"
+            alt="buss admin"
+            width="230"
+            height="130"
+        /></a>
+        BUSINESS ADMINISTRATION & MANAGEMENT
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhgDw9NNVUgGg3aFjeoyrndSoBsu42_jwxxTe9IZOkHGrJxRcgkdZXmRYfW6g_tgQKBT-p9z3AcQMAc5eRK9ZA_iY_xwazEOIZlW0f5DvUFKiPm8EY_DagZkhyvdwGEyQUYlSHTqeFaRFBhFmywWCkJglRMHfGMofz51wtPFraV-R6wvAeG9ZAddNdH/s320/civil-engineering-technician.jpg"
+            alt="civil engineer"
+            width="230"
+            height="130" /></a
+        >CIVIL ENGINEERING TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvZoV5sJ6nf-ohjqo0fNG6-1yhPEJZ4ZTegracE9tzHvE68KqVZGfMaQSGwjMGW0QIj3QTKSBLDi8LYGaEi9BVnXUPV3NScjUGvDQLAzNFQ5i5ltCapqaHOCKnWEniOr_ibXFQZl6mmjbOLFD86Fjz63oWqTN2qhQh_FbimYoo02To-lFg58Jl-4Us/s320/eletrician.jpg"
+            alt="electrical engineer"
+            width="230"
+            height="130"
+        /></a>
+        ELECTRICAL/ELECTRONIC ENGINEERING TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhAKOtzLlQHjES6UgunC3Btz2gJkCSzDfYdMLJpJqQC3chWXG_1bNUR2b6yV-FaFTjZcspqE_JQWQIpMu0WEFnlRpL3x2FZna7kMREW7jo8iOLvU5EX86XkYAHxN8AU_cjZm7LojrN3d_f3FTBJTfjf32q70cWTuR_CZg5XXkyFzBtdKRL_DxXaPEH6/s320/estate.jpeg"
+            alt="estate management"
+            width="230"
+            height="130" /></a
+        >ESTATE MANAGEMENT AND VALUATION
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_1V978GLlBcqPEAADhm2Xr9FSPYRNBCFZQt9iCPmZXHyRlK90sDLUHyqkVt2CjvT5R-xWxrhtuPT-qY3C82qSfupnzakaDDtEmPYfFU6-ucPbcTP8CGIQIMG2OkfJ13lm0A47rrmS6RFzMiFCPSXL9lSXadoFm8Pth_Bjjij62YJuzLZg_U2pa70e/s320/hospitality-hero-mobile.jpg"
+            alt="hospitality management"
+            width="230"
+            height="130" /></a
+        >HOSPITALITY MANAGEMENT
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiCShMtjc_aAejHl8uBiaSbxZM86RHs6I28f6gd9YIXCadSOzfeeOeMBfDYC6GNxkqes7nKZmUJZLQJ8dqIBG9GXX7t6lwE-nqn1fbzxrNS0G--g7H9ZLP0aAhKjfNITSHr-z9j6BnGRSJ1VLXupZJmWL_kb2CWWw_50m7KoBnHVONdYgwRPhZG6IcV/s320/leisure-y-tourism.jpg"
+            alt="leisure management"
+            width="230"
+            height="130" /></a
+        >LEISURE AND TOURISM MANAGEMENT
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgYLswRAXXA7M_Bc6N0XOjKA5TfPU2VVE9rCuJttdMbEQMfM1pWKbv9CeM7TXzbLdqu-uradPFW2JluXBMlVLUI0KLNx4IbVp6FPoNczHLpmAIBEGCbvqCL2tGoA4_4uPMFhpwj63xSD8jjHX5R5DMN_x3lRzF1zydxZWFh1o5CbdmpTq4bdxkD-ORR/s320/mechanical-engineering-technology.jpg"
+            alt="mechanical engineer"
+            width="230"
+            height="130" /></a
+        >MECHANICAL ENGINEERING TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjDgDF2X_f2OdG304I6BWwJw00VYfpY7Sz5SZ-0Ypy_15oKvqkyc4noe9HtToSmXBwvT1U0Bpn0AL1VUSaos_WhapNPBN-MWwBQBjdylG7pVTOsIWEh1EIULaoIh9KoYvmgr-5OFJkpLcWEPeirHOaybRko0HNCdX390Fngc0MdcA9yCl-Idw2NHe6j/s320/Metallurgical-Cutoff.webp"
+            alt="metallurgical engineer"
+            width="230"
+            height="130" /></a
+        >METALLURGICAL ENGINEERING TECHNOLOGY
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgEryVW7Da5xy7IlnmrMSkQmZwgjspsAe4GMvGkTJcFkbXNByb5J4-qUdf8UdeSz9kaAls6p_XcRkb-gvnUANijoFY-XnZW-MvGkywRcY_TVfakBYWdxDP9J_xnQv1hpfQM0xIZ4sDMj_Qoz8jMmOMP3JVcCONmuUHImgAD8f2ZM2boDos9eu57qVCZ/s320/MINERAL%20RESOURCES%20ENGINEERING%20TECHNOLOGY.jpg"
+            alt="mineral resourches"
+            width="230"
+            height="130"
+        /></a>
+        MINERAL RESOURCES ENGINEERING
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVGngkAnaeSN1SyZY798Sz8mZOhTBirD4mPGYvtqdwjA9-DoG8ASoh4M2xTD3O1arQuko3tMJMkiyFRM7eCjzgV58UeifmF0s55FwgTBaxdovQHQlqB-H5Vi05gVEKvXn559zDWCZvmVjlpgclsk1o5w_vn36rdnAwHt2YxDCMJLssh4uE5UVaXxjJ/s320/OTM%20(Office%20Technology%20Management).jpg"
+            alt="office technology"
+            width="230"
+            height="130" /></a
+        >OFFICE TECHNOLOGY AND MANAGEMENT
+      </div>
+      <div class="general-courses">
+        <a href=""
+          ><img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjgsTzOfpmaS0MpTqhB4-RiH2yURlh9LzcRyiZGsyDOqgWaSP8YeC_a-bSKk0cxFjGoYPixM508Lu_rkJsbvQ-u_cO-ajL3rJVmIX7JDGnkVhvntlTmllEpNpjyvIwqXPrCslv3I35Rjqm1vCgSuRFF39AkSQrNnNgA6BDEa0YNeah8awABQYsn-C5S/s320/SCIENCE%20LABORATORY%20TECHNOLOGY.jpg"
+            alt="science laboratory"
+            width="230"
+            height="130" /></a
+        >SCIENCE LABORATORY TECHNOLOGY
+      </div>
+    </div>
+
+    <div
+      style="
+        padding: 20px;
+        background-color: rgb(218, 218, 245);
+        margin-top: 10px;
+      "
+    >
+      <h3 style="margin-bottom: 5px; margin-top: 5px">
+        PUBLIC ADMINISTRATION (ND)
+      </h3>
+
+      <div class="the-book-div">
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjRGLDWNBHS8Jpt_QQG6Gr5-zPal0qO0SEmPk5DOVFzu49gCJBmV7nQ4G4Llt-a1F0LYUwbz_880AlImYXP1XXYXqacS5dmPz979fBbrJXwvbLanmHDWiqaO6NqeH5WQasLg0mD-cCkTJddtgCSTslphC2q-hzRTtZhpSYojGI9Jwq51ALu8hGqMpox"
+            alt="citizenship"
+        /></a>
+
+        <a href="htpps://norm.com"
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEh1u-yLeIV4vSLkzdTdQGZPQuMwP9HrB7rIYEvpdSU7e_LBQhqS11ZwC8rNKPiIB8jF4kG4ZbP7tTq-H9wRq1nvm92CcATX4qPyB6mzeu9o2tZymzI3SuW9Dz7txvzpPsuUPsfQpSgEgjumDmzIiCJO92AfFvM1M68sLp3sF72Zdj1ralKsU_auVQWL"
+            alt="Aspectsofwritten"
+        /></a>
+
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgaGxVtOzkefNFs6RMjitbQtzGE8U0tRsDPAtOGblt4sfUhCyn-cAkHNdzX0MXCsXH782lyfD_N_E0F_3ULPnIdFKZzEsb9ztVQGevgPTQF5gsCU8x8A0Lu9dR2D_DldYqmzGyUNdHhSxKyuc10W_3xJzhV8okRwixwV9UKKnwFOE0s9XJFoqDBBfjt"
+            alt="Theprinciplesandpraticeofauditing"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhvmbjcOHQ6mT7R7yjTmYxaQBEDeTe8NHbwbJ71zi565T6w2UGgAu1K5MLpoI8hZ_F4gH3PNerQns11-SmSkTEjFdwzBkfSq9rF9B0ny7RZw8ZGPhryJc0LeaTXKelD__ULzjthNjBROMUXAMaDe24oshcDqhZrRgmxAp0hS9536hY5t3r8XtBnD5Kq"
+            alt="businessmath"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiBr6npnYvff0WIwIYGDXe5hA661DdrrhEFUxtErwur_VMwVKmpFx6boiwWGtKUmxHhmZ8uLWQHoU-QSvUEpd4VHEHDh5uJJtzLRlp4sgJxTVoAMUCiWttbW3Mi5rnJ0KjxJRTp6--9Ern1ggLkT_p8fiNllaGh-i7ypH8dlilEm6T-frP2BoMXqJIn"
+            alt="physocolgy"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjGQj4aiW5g3VmbPNTYNUMfk9p3U00oPvEU-xbIhrOx9IGIvd3Nm5wDo6rLS5-jjB-5MSOyQBXPFeO9ewlLjUYrj3t6X5nmLQizxriSKAntFJpIh83S_gDSyMIz356pMmx2uBSgzp68iSq9CQkSQYf1s38Kbd28hkMtbCTfQBhCxYz-bBEZNZ9DS2Lz"
+            alt="edd"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjfL3uzFyPJSup1zOSPm8e7OVJzm23FdT6sHuLt-E57gXh2I8uyiVbE6ryY5T9kQsjDQB158vviFDXziBUWXHQGuuTFTZwjeJkchvS3GOt6smi6UGPO_3fjOreD8gI2DeaaeFHvqAZO9ST6gHJ9pIXYS1XxaOtiOvNimwshMbI5fT4_9DbmA9-ZO0PV"
+            alt="account"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhI6P4v5k3j2_StSkR91rCRd6WXEKiltAemRVP9chacxlAPL-eRMnKXamc1Gw30C0Y6OSkw-rIpbAf73G4Ln0IyLBZC3F4eDixLyZSesv9eFWbAtn37k3rp8wbZOy3su3wk0YHgqAmQUj4yemJzYBLQLJCqGWUZ6Th_4RR6pxV2xb3HPXv909DN8TDO"
+            alt="organization"
+        /></a>
+        <a href=""><img src="" alt="" /></a>
+        <a href=""><img src="" alt="" /></a>
+        <a href=""><img src="" alt="" /></a>
+      </div>
+    </div>
+
+    <div
+      class="public-administration-hnd"
+      style="
+        background-color: lightgreen;
+        padding: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      "
+    >
+      <h3 style="margin-bottom: 5px; margin-top: 5px">
+        PUBLIC ADMINISTRATION (HND)
+      </h3>
+      <div style="display: flex; gap: 10px">
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEh_oQz1S3_yunOSklIP2pJuE2iQCnyOjy8g_31s_na8DTxA1na6xldhlEuFYkNOCrrMMqLlEWCRFgyHmwuUZWOEvglK0Ontw58Sio4z8hXmiKd-PH1xuebNKAR-ZUTvrp5rUOQPjZvgEBlrS09sJIcOkOCh0D0SR5aZa6nvg6QPKl0FRxsxp7sxKi3g"
+            alt="Rural development"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEirMDAeaopmkW4_rV3H0Ij6b4B5p9vWfXmOOGTH808TMTqEBU_adkFRhOXurR297x2s5_BmfjIsg5avoPyg1ragnXMLrl9TsexIIMmYNro54_B1CR1DtsF5na5Ugz89QMak4dglw2alk_JOCKy661dueC81mYhCtsRsqAKcezNmWdGfR1031F8qMN7p"
+            alt="small scale"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiPfE8KZYrFAbuu4hUqqrPnhprhakVKqT38wYQeAvuX60DbuMQ5yKsUWrmYAqCZQ6GTz-zrZOR6BVTvFuyg_wYRYwEQ_pf6nMnaLKjBUozSVaG-96n1NZ5grT9Vxzf6a42ALO0EJqx63CPSQl3LF6GnUhj8_OIJR290eL7_XR5rRGRcNWKKXRi4pR8V"
+            alt="adminlaw"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEhUX3I2P830vMSKunmJ41M8e5XnFJjQQmlGNLe8nPM_e0bYVxNIbp7PTVtzL1BH_Ru3vxjspjlXRhG_FFsHLv9VFW2Gf7-f1cWna50Z8QX1wei9Ij1pt1d1hNncPDduwjoSqPmkjxrSIOnLZWMvFvvf590_20DE8OftiowUVLnTOjrmMTxZ_6eRRFQH"
+            alt="organiazational behaviour"
+        /></a>
+        <a href="http://127.0.0.1:5500/Norm/innerkp.html"
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgx73f4U24T5F4up_TMCRfN31QhMNssGeTksGyfVuqr0yh-7D1b8hc4Q04UgrHzrxg3a_570l8jIxB0tUYDq2GqkC_OuYIuQ1f77tLzjQFXx5EVEadaHxSLLcx0YSvOvXR0CI29-Q4nl6_xh3Puv0exvVFGrbtx0IoAC6UqATyUEkqc1co0euPk03Lp"
+            alt="edd"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiWFV37AHBEjAhrWPTVAO6QG6GMgo8dAg_Uoj7qi7wqs6b4QywrpqTPVCfUcHIIXje5Kx5kw3R9G_op663RAvlYOZG6FJaHgj2PWk-o7WqE-Z80CNFlgrD4K0lBFlQuFw3uf4jVyBscA7gv5GSphlH5aU5ceteU-__5qmvvvrtHsdXBhF2kzSvvULOA"
+            alt="principle and practice"
+        /></a>
+        <a href=""
+          ><img
+            class="the-book"
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEjOUi-zgSy-qE9ZaNV6jXrzzJPZ_EN50xx6C9Ni1fLV51zy__m0zMI2aWBWat0Guu7p1CQRLFcOOjOmyLNxo5qTUuQ-RDI1SsJSNIT2lToGocfhNv-AxYfqfQN5WFCgoMLP8LX0qu-jjtDYxusLw51YV0AmPKaYTTAAJCL3Qi3UetErpragN3TaFb37"
+            alt="local government finance"
+        /></a>
+        <a href=""><img src="" alt="" /></a>
+        <a href=""><img src="" alt="" /></a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="all-footer">
+        <div>
+          <div>
+            <h3 class="footer-h3">KWARAPOLYEXPO</h3>
+          </div>
+
+          <div>
+            <p>
+              <a href="#"><span class="first-span">The Easier Way</span></a>
+            </p>
+            <p>
+              <span class="first-span">Feature Overview</span><a href="#"></a>
+            </p>
+            <p>
+              <span class="first-span">Get Kwarapolyexpo</span><a href="#"></a>
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <h3 class="footer-h3">SERVICES</h3>
+          </div>
+
+          <div>
+            <p><span class="first-span">Set up</span><a href="#"></a></p>
+            <p><span class="first-span">Training</span><a href="#"></a></p>
+            <p><span class="first-span">Support</span><a href="#"></a></p>
+            <p><span class="first-span">Beta Group</span><a href="#"></a></p>
+            <p><span class="first-span">Wish List</span><a href="#"></a></p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <h3 class="footer-h3">HOW WE HELP</h3>
+          </div>
+          <div>
+            <p><span class="first-span">Students</span><a href="#"></a></p>
+            <p><span class="first-span">Parents</span><a href="#"></a></p>
+            <p><span class="first-span">Lectures</span><a href="#"></a></p>
+            <p>
+              <span class="first-span">Administrators</span><a href="#"></a>
+            </p>
+            <p><span class="first-span">Case Study</span><a href="#"></a></p>
+          </div>
+        </div>
+
+        <div>
+          <div>
+            <h3 class="footer-h3">About</h3>
+          </div>
+          <div>
+            <p><span class="first-span">Vision</span><a href="#"></a></p>
+            <p><span class="first-span">Team</span><a href="#"></a></p>
+            <p><span class="first-span">Partners</span><a href="#"></a></p>
+            <p><span class="first-span">Blog</span><a href="#"></a></p>
+            <p><span class="first-span">Newsletter</span><a href="#"></a></p>
+            <p><span class="first-span">Contact</span><a href="#"></a></p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          background-color: green;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          text-align: center;
+          color: white;
+        "
+      >
+        <div style="font-family: roboto; font-size: 17px">
+          <p style="font-size: 12px">REACH OUT TO US RIGHT NOW</p>
+          <p>+2348140156931</p>
+          <p><a href="#">help@Kwarapolyexpo.com</a></p>
+        </div>
+
+        <div class="footer-icon">
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEi9H5qb-Zuh1pRmzkIGFmxzyp6yTJ9f6GpyR6kEj7LsquOuaILoZzV0BBNDSM-desnGGGGkSEnsINDjnN7Xe8xITZp5QbkFJKpfzEDipyg3pnUb9CQTWn8DSz175X6INg9WhinQJwwqiEo7d8swHKtEELvA7o3fUN4ml-9V0lYtXhXcvceZBMASl9KV"
+            width="20"
+            height="20"
+            alt="facebook"
+          />
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEgPOggoGfdYWExBE79W3gefw1SsFF0HBf3UNCZSgwuHD9NFSfASuBqHRXGYyALFuKKnGrEdenFDAACH-BG8lommzRSqGYBDTZkRCT4KpG0vtFuYaiVsNv7k6iMnf2OvRsEUGw131PsuN-plJsCYe_X6G1acf4cCdWc0OCKgv-vhUwa8gk06COCSuM61"
+            width="20"
+            height="20"
+            alt="whatsapp"
+          />
+          <img
+            src="https://blogger.googleusercontent.com/img/a/AVvXsEiH8ghkTNl-G5X0SZ_zbyjTMnfUlSqMqi_F1SNPeHXF-IovBE_ro_upalm8GO8bQMiY2WrK65QsOa0pPviZrwIjpmXjA6ON6SeaoXr01fNdWduaEZuAwgoKOPkFiCQcbBq290BT4o3f6So3Z1nua90OqZGTnVSTFc_3IcVVf68ODMFqqdvIXddJtkbe"
+            width="20"
+            height="20"
+            alt="twitter"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
